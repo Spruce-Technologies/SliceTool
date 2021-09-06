@@ -46,7 +46,7 @@ func main() {
         if Number2 != "" && Number1 != "exit" { // Same thing as the last one
             Int2, Error = strconv.ParseInt(Number2, 10, 64)
         } else {
-            Int2 = 0
+            Int2 = LengthInt
         }
         
         if Error == nil {   // Refuse to do operations unless no conversion errors occured
@@ -58,8 +58,6 @@ func main() {
                 
                 if Int2 < 0 {
                     Int2 += LengthInt   // Same thing as above
-                } else if Int2 == 0 {   // Since 0:-1 becomes 0:len-1, -1:0 becomes len-1:0. That'd make us slice backwards, so we'll have -1:0 become len-1:len
-                    Int2 = LengthInt
                 }
             }
         
@@ -88,4 +86,4 @@ func main() {
         fmt.Println("Greetings from Harry Nelsen!")
         fmt.Println("Glad you could find use of this tool.")
     }
-} //endfunc (main())
+} //endfunc (main)
